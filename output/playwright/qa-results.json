@@ -1,0 +1,211 @@
+{
+  "date": "2026-10-09T19:36:06.066Z",
+  "checks": [
+    {
+      "site": "dental-clinic-website",
+      "test": "/ @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/about @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/dentists @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/booking @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/testimonials @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/contact @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/checkup @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/hygiene @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/whitening @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/aligners @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/restorations @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/family @ 1440: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/ @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/about @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/dentists @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/booking @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/testimonials @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/contact @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/checkup @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/hygiene @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/whitening @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/aligners @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/restorations @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/family @ 768: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/ @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/about @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/dentists @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/booking @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/testimonials @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/contact @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/checkup @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/hygiene @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/whitening @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/aligners @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/restorations @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "/treatments/family @ 390: HTTP 200, one h1, no overflow, labeled controls",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "Unknown route returns 404",
+      "passed": true
+    },
+    {
+      "site": "dental-clinic-website",
+      "test": "Guided booking validation, eligible dentist, available future date, confirmation, anonymous persistence, conflict disabled after reload, reset",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "/",
+    "/dentists",
+    "/treatments/aligners",
+    "/booking"
+  ],
+  "productionHydration": "passed",
+  "images": "all rendered images loaded",
+  "layout": "no desktop overflow",
+  "errors": []
+}

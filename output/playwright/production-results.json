@@ -1,0 +1,8 @@
+{
+  "site": "dental-clinic-website",
+  "routes": 13,
+  "internalLinks": 214,
+  "localAssets": 0,
+  "productionHttp": "passed",
+  "unknownRoute404": "passed"
+}

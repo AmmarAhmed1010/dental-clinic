@@ -1,0 +1,1603 @@
+@import "tailwindcss";
+@font-face {
+  font-family: Calm;
+  src: url("/fonts/0.woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: Care;
+  src: url("/fonts/1.woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+:root {
+  --cream: #f7f6ee;
+  --sage: #e0e8db;
+  --forest: #24483e;
+  --clay: #bf7459;
+  --background: var(--cream);
+  --text: var(--forest);
+  --muted: #647369;
+  --border: #cfd8ca;
+  --selected: #d6e4d2;
+  --button-radius: 8px;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 35px;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Care, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: Calm, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -0.05em;
+}
+h1 {
+  font-size: clamp(42px, 4.8vw, 70px);
+}
+h2 {
+  font-size: clamp(32px, 3.5vw, 48px);
+}
+h3 {
+  font-size: 22px;
+  letter-spacing: -0.035em;
+}
+h1 em,
+h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  color: #617d60;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+a,
+button,
+input,
+select,
+summary {
+  touch-action: manipulation;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #8b533e;
+  outline-offset: 4px;
+}
+::selection {
+  background: var(--forest);
+  color: var(--cream);
+}
+.skip-link {
+  position: fixed;
+  top: -100px;
+  padding: 12px;
+  background: var(--forest);
+  color: var(--cream);
+  z-index: 99;
+}
+.skip-link:focus {
+  top: 0;
+}
+.clinic-topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 9px 5%;
+  background: var(--sage);
+  font-size: 10px;
+  color: #4b6255;
+}
+.clinic-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 21px 5%;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 20;
+}
+.clinic-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.clinic-brand > span {
+  font-family: Calm, sans-serif;
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.06em;
+}
+.brand-sub {
+  display: block;
+  font-family: Care, sans-serif;
+  font-size: 7px;
+  letter-spacing: 0.3em;
+  line-height: 1.4;
+  margin-top: 7px;
+  padding-left: 2px;
+}
+.clinic-navigation {
+  display: flex;
+  gap: 33px;
+  align-items: center;
+  font-size: 12px;
+}
+.clinic-navigation > a:hover,
+.clinic-navigation > a[aria-current="page"] {
+  border-bottom: 1px solid var(--forest);
+}
+.booking-link {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  min-height: 45px;
+  padding: 10px 17px;
+  background: var(--forest);
+  color: var(--cream);
+  border-radius: var(--button-radius);
+  font-size: 11px;
+}
+.booking-link:hover {
+  background: #375c4c;
+}
+.clinic-menu {
+  display: none;
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--forest);
+  place-items: center;
+}
+.clinic-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #607362;
+}
+.clinic-eyebrow > span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #78906a;
+  margin-right: 8px;
+  margin-bottom: 1px;
+}
+.clinic-hero {
+  max-width: 1320px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 60px;
+  padding: 70px 5% 65px;
+  align-items: center;
+}
+.clinic-hero h1 {
+  margin: 26px 0;
+  font-size: clamp(44px, 4.9vw, 72px);
+}
+.clinic-hero-copy > p:not(.clinic-eyebrow) {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+.clinic-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 15px 21px;
+  min-height: 52px;
+  background: var(--forest);
+  color: var(--cream);
+  border: 1px solid var(--forest);
+  border-radius: var(--button-radius);
+  font-size: 12px;
+  transition: background 0.25s;
+}
+.clinic-button:hover {
+  background: #376553;
+  border-color: #376553;
+}
+.clinic-button:disabled {
+  opacity: 0.5;
+}
+.hero-reassurance {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+  color: #617263;
+  font-size: 10px;
+}
+.clinic-hero-visual {
+  position: relative;
+  padding-bottom: 34px;
+}
+.curved-photo {
+  position: relative;
+  height: 480px;
+  border-radius: 180px 180px 18px 18px;
+  overflow: hidden;
+}
+.curved-photo img {
+  object-fit: cover;
+  object-position: 43% center;
+}
+.visit-note {
+  position: absolute;
+  bottom: 10px;
+  left: -28px;
+  right: 38px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 30px #24483e08;
+  border-radius: 12px;
+  padding: 19px 23px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.note-icon {
+  background: var(--sage);
+  padding: 12px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+.visit-note strong {
+  font-family: Calm, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+.visit-note p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.stock-caption {
+  position: absolute;
+  top: 17px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 6px;
+  letter-spacing: 0.14em;
+  color: #ffffff;
+  background: #24483e70;
+  width: max-content;
+  padding: 5px 10px;
+  margin: auto;
+  border-radius: 12px;
+}
+.care-values {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 25px 5%;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: #eaf0e4;
+}
+.care-values > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 12px;
+}
+.care-values svg {
+  color: #6b8462;
+  stroke-width: 1.5;
+}
+.clinic-treatments,
+.people-section {
+  padding: 85px 5%;
+  max-width: 1360px;
+  margin: auto;
+}
+.clinic-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 42px;
+}
+.clinic-section-heading h2 {
+  margin-top: 18px;
+}
+.clinic-section-heading > p,
+.clinic-section-heading > div:last-child > p {
+  font-size: 13px;
+  color: var(--muted);
+}
+.quiet-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  min-height: 40px;
+  border: 0;
+  background: transparent;
+  color: var(--forest);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 0;
+  cursor: pointer;
+}
+.quiet-link:hover {
+  color: #587954;
+  border-bottom-color: var(--forest);
+}
+.clinic-section-heading .quiet-link {
+  margin-top: 14px;
+}
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.treatment-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fdfcf5;
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+  min-height: 285px;
+}
+.treatment-card:hover {
+  background: var(--sage);
+  border-color: #98ae91;
+}
+.treatment-card > svg {
+  color: #789169;
+  margin-bottom: 25px;
+}
+.treatment-card .clinic-eyebrow {
+  font-size: 8px;
+  margin-bottom: 12px;
+}
+.treatment-card h3 {
+  font-size: 22px;
+  max-width: 270px;
+}
+.treatment-card > p:not(.clinic-eyebrow) {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 15px 0 25px;
+}
+.treatment-card > span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+}
+.approach-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 75px;
+  padding: 70px 5%;
+  align-items: center;
+  background: var(--sage);
+}
+.approach-photo {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+.approach-photo img {
+  object-fit: cover;
+  object-position: 40% center;
+}
+.approach-photo > span {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  font-size: 7px;
+  letter-spacing: 0.05em;
+  background: #f7f6eedd;
+  padding: 7px 10px;
+  border-radius: 5px;
+}
+.approach-copy {
+  max-width: 460px;
+}
+.approach-copy h2 {
+  margin: 20px 0 25px;
+  font-size: 44px;
+}
+.approach-copy > p:not(.clinic-eyebrow) {
+  color: #526650;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+.dentist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.dentist-card > div {
+  position: relative;
+  height: 340px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--sage);
+}
+.dentist-card img {
+  object-fit: cover;
+  object-position: center 20%;
+}
+.dentist-card > div > span {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  padding: 6px 8px;
+  font-size: 6px;
+  letter-spacing: 0.1em;
+  background: #f7f6eedd;
+  text-align: center;
+  border-radius: 5px;
+}
+.dentist-card h3 {
+  font-size: 24px;
+  margin: 22px 0 8px;
+}
+.dentist-card .dentist-role {
+  font-size: 11px;
+  color: #708365;
+  margin-bottom: 12px;
+}
+.dentist-card > p:not(.dentist-role) {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.dentist-card .quiet-link {
+  font-size: 10px;
+  margin-top: 15px;
+}
+.faq-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  padding: 75px 5%;
+  background: #efefe4;
+}
+.faq-section h2 {
+  margin: 20px 0 25px;
+}
+.faq-section > div > p:not(.clinic-eyebrow) {
+  font-size: 13px;
+  color: var(--muted);
+}
+.faq-section details {
+  border-bottom: 1px solid var(--border);
+}
+.faq-section summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0;
+  list-style: none;
+  font-size: 13px;
+  cursor: pointer;
+  line-height: 1.6;
+}
+.faq-section summary svg {
+  flex-shrink: 0;
+}
+.faq-section details > p {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 0 25px 23px 0;
+}
+.visit-cta {
+  padding: 75px 7%;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 60px;
+  align-items: center;
+  background: #d7e3cf;
+  border-bottom: 1px solid #c3d3b9;
+}
+.visit-cta h2 {
+  margin-top: 20px;
+  font-size: 52px;
+}
+.visit-cta > div:last-child {
+  justify-self: end;
+}
+.visit-cta p:not(.clinic-eyebrow) {
+  font-size: 13px;
+  color: #52684c;
+  margin-bottom: 25px;
+}
+.clinic-footer {
+  padding: 55px 5% 25px;
+}
+.clinic-footer-main {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.1fr 1.15fr;
+  gap: 40px;
+}
+.clinic-footer-main > div {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+}
+.clinic-footer-main h3 {
+  font-size: 13px;
+  margin-bottom: 15px;
+  letter-spacing: 0;
+}
+.clinic-footer-main p {
+  color: var(--muted);
+  font-size: 11px;
+}
+.clinic-footer-main > div:first-child > p {
+  margin-top: 18px;
+  font-size: 13px;
+}
+.clinic-footer-main a:hover {
+  color: #668361;
+}
+.clinic-footer-bottom {
+  border-top: 1px solid var(--border);
+  margin-top: 50px;
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  color: var(--muted);
+  font-size: 9px;
+}
+.clinic-page-hero {
+  padding: 65px 5% 60px;
+  max-width: 1360px;
+  margin: auto;
+}
+.clinic-page-hero h1 {
+  margin: 24px 0 25px;
+  max-width: 980px;
+}
+.clinic-page-hero > p:not(.clinic-eyebrow) {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.treatment-index {
+  padding-top: 10px;
+}
+.treatment-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+.treatment-hero > div > p {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+.treatment-hero h1 {
+  font-size: clamp(42px, 4.5vw, 62px);
+}
+.treatment-duration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 20px;
+}
+.treatment-hero-photo {
+  position: relative;
+  height: 360px;
+  border-radius: 16px 110px 16px 16px;
+  overflow: hidden;
+}
+.treatment-hero-photo img {
+  object-fit: cover;
+}
+.treatment-hero-photo > span {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-size: 7px;
+  background: #f7f6eedd;
+  padding: 7px 10px;
+  border-radius: 5px;
+}
+.treatment-information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  padding: 65px 5% 85px;
+  background: #eef0e6;
+}
+.treatment-information h2 {
+  margin: 20px 0 25px;
+}
+.treatment-information > div > p:not(.clinic-eyebrow) {
+  color: var(--muted);
+  font-size: 14px;
+}
+.treatment-information .small-note {
+  margin-top: 20px;
+  font-size: 11px;
+}
+.expectation {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+  padding: 30px 0;
+}
+.expectation > span {
+  font-size: 10px;
+  color: #8ba07d;
+}
+.expectation h3 {
+  font-size: 20px;
+  flex: 1;
+}
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  padding: 25px 5% 85px;
+}
+.visit-information-card {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--border);
+}
+.visit-information-card > svg {
+  margin-bottom: 20px;
+}
+.visit-information-card h2 {
+  font-size: 29px;
+  margin-bottom: 18px;
+}
+.visit-information-card p {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 430px;
+}
+.visit-information > .clinic-button {
+  margin-top: 30px;
+}
+.clinic-form h2 {
+  font-size: 30px;
+  margin-bottom: 28px;
+}
+.clinic-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+  font-size: 11px;
+}
+.clinic-form input,
+.clinic-form textarea,
+.clinic-form select,
+.date-label select {
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 15px;
+  border: 1px solid #bbcbb8;
+  border-radius: 6px;
+  background: #fdfcf7;
+  color: var(--forest);
+  font-size: 14px;
+}
+.clinic-form textarea {
+  resize: vertical;
+}
+.small-note {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 20px 0;
+}
+.booking-status {
+  font-size: 12px;
+  color: #895238;
+  line-height: 1.7;
+  margin-top: 18px;
+}
+.form-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.patient-stories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 30px 5% 85px;
+}
+.patient-stories article {
+  padding: 30px;
+  background: var(--sage);
+  border-radius: 12px;
+}
+.patient-stories article > svg {
+  margin-bottom: 25px;
+}
+.patient-stories h2 {
+  font-size: 28px;
+  margin-bottom: 22px;
+}
+.patient-stories blockquote {
+  font-size: 14px;
+  color: #5b6f58;
+  line-height: 1.8;
+  margin: 0;
+}
+.patient-stories article > p {
+  font-size: 9px;
+  margin-top: 25px;
+  color: #677c5f;
+}
+.care-principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  padding: 65px 5%;
+}
+.care-principles span {
+  font-size: 11px;
+  color: #74886b;
+}
+.care-principles h3 {
+  margin: 15px 0;
+}
+.care-principles p {
+  font-size: 13px;
+  color: var(--muted);
+}
+.booking-page {
+  padding: 50px 5% 65px;
+  max-width: 1320px;
+  margin: auto;
+}
+.booking-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.booking-heading h1 {
+  font-size: 48px;
+  margin: 17px 0;
+}
+.booking-heading > p:not(.clinic-eyebrow) {
+  font-size: 14px;
+  color: var(--muted);
+}
+.demo-banner {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 11px;
+  color: #4d6850;
+  padding: 16px 20px;
+  background: #e5ebde;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+.demo-banner svg {
+  flex-shrink: 0;
+}
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+.booking-panel {
+  background: #fdfcf7;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.booking-steps {
+  display: flex;
+  list-style: none;
+  padding: 25px 30px;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  margin: 0;
+  justify-content: space-between;
+  background: #faf9f2;
+}
+.booking-steps li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: #7e8a7b;
+}
+.booking-steps li > span {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 9px;
+}
+.booking-steps .current {
+  color: var(--forest);
+  font-weight: 600;
+}
+.booking-steps .current > span,
+.booking-steps .complete > span {
+  background: var(--forest);
+  color: var(--cream);
+  border-color: var(--forest);
+}
+.booking-step-content {
+  padding: 30px 35px;
+}
+.booking-step-content h2 {
+  font-size: 31px;
+  margin: 14px 0;
+}
+.step-description {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 25px;
+  line-height: 1.8;
+}
+.care-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.care-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fafaf4;
+  text-align: left;
+  color: var(--forest);
+  min-height: 76px;
+}
+.care-option:hover {
+  border-color: #99b08c;
+}
+.care-option.selected {
+  border-color: #6e9162;
+  background: #eaf0e4;
+}
+.care-option > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.care-option strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+.care-option > div > span {
+  font-size: 10px;
+  color: var(--muted);
+}
+.option-radio {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #a9b8a3;
+  flex-shrink: 0;
+}
+.care-option.selected .option-radio {
+  background: var(--forest);
+  color: var(--cream);
+  border-color: var(--forest);
+}
+.booking-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 25px;
+  margin-top: 28px;
+}
+.appointment-summary {
+  background: var(--sage);
+  border-radius: 12px;
+  padding: 32px;
+}
+.summary-mark {
+  display: block;
+  margin-bottom: 20px;
+  color: #77906b;
+}
+.appointment-summary h2 {
+  font-size: 34px;
+  margin: 17px 0 30px;
+}
+.appointment-summary > div {
+  border-top: 1px solid #bbcdb2;
+  padding: 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.appointment-summary > div > span {
+  font-size: 10px;
+  color: #66795e;
+}
+.appointment-summary strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+.appointment-summary small {
+  display: block;
+  font-size: 11px;
+  margin-top: 5px;
+  font-weight: 400;
+}
+.appointment-summary > p:not(.clinic-eyebrow) {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  font-size: 10px;
+  color: #61745a;
+  margin-top: 20px;
+}
+.appointment-summary > p svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.appointment-summary .summary-demo {
+  font-size: 9px !important;
+}
+.booking-reset {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 25px;
+  font-size: 10px;
+  color: var(--muted);
+}
+.booking-reset button {
+  font-size: 10px;
+  gap: 8px;
+}
+.date-label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 11px;
+  margin: 20px 0 25px;
+}
+.slot-label {
+  font-size: 11px;
+  margin-bottom: 15px;
+  color: var(--muted);
+}
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.time-slots button {
+  min-height: 51px;
+  background: #fafaf4;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--forest);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.time-slots button:disabled {
+  color: #7e8579;
+  background: #e9ece4;
+  border-color: #e0e5db;
+}
+.time-slots small {
+  font-size: 7px;
+  color: #81877a;
+}
+.time-slots button.selected {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: var(--cream);
+}
+.no-slots {
+  padding: 25px;
+  background: #f0f1e8;
+  color: var(--muted);
+  font-size: 13px;
+  border-radius: 8px;
+}
+.clinic-form .demo-consent {
+  flex-direction: row;
+  align-items: start;
+  gap: 12px;
+  font-size: 10px;
+  line-height: 1.7;
+}
+.demo-consent input {
+  width: 17px;
+  min-height: 17px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--forest);
+}
+.booking-confirmation {
+  text-align: center;
+  padding: 65px 20px;
+  max-width: 850px;
+  margin: auto;
+}
+.success-symbol {
+  display: inline-grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: var(--sage);
+  margin-bottom: 25px;
+}
+.booking-confirmation h1 {
+  font-size: 56px;
+  margin: 22px 0;
+}
+.booking-confirmation > p:not(.clinic-eyebrow) {
+  font-size: 14px;
+  color: var(--muted);
+}
+.confirmation-details {
+  background: #e9efe2;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 30px;
+  margin: 35px auto;
+  text-align: left;
+  max-width: 460px;
+}
+.confirmation-details > span {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.confirmation-details > strong {
+  display: block;
+  font-family: monospace;
+  font-size: 17px;
+  margin: 9px 0 25px;
+}
+.confirmation-details > div {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
+  font-size: 13px;
+}
+.confirmation-details > div small {
+  display: block;
+  font-size: 10px;
+  margin-top: 6px;
+  color: var(--muted);
+}
+.confirmation-details > div svg {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.booking-confirmation > .quiet-link {
+  display: flex;
+  width: max-content;
+  margin: 20px auto 0;
+}
+@media (max-width: 1000px) {
+  .clinic-navigation {
+    gap: 20px;
+  }
+  .clinic-hero {
+    gap: 35px;
+  }
+  .curved-photo {
+    height: 420px;
+  }
+  .clinic-hero h1 {
+    font-size: 52px;
+  }
+  .clinic-hero-copy > p:not(.clinic-eyebrow) {
+    font-size: 14px;
+  }
+  .visit-note {
+    left: -10px;
+    right: 15px;
+    padding: 15px;
+  }
+  .treatment-card {
+    padding: 25px 20px;
+  }
+  .treatment-card h3 {
+    font-size: 20px;
+  }
+  .approach-section {
+    gap: 40px;
+  }
+  .approach-copy h2 {
+    font-size: 36px;
+  }
+  .dentist-card > div {
+    height: 280px;
+  }
+  .clinic-footer-main {
+    gap: 25px;
+  }
+  .faq-section {
+    gap: 40px;
+  }
+  .visit-cta h2 {
+    font-size: 43px;
+  }
+  .booking-layout {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+  }
+  .booking-step-content {
+    padding: 25px;
+  }
+  .booking-steps {
+    padding: 20px 22px;
+    gap: 10px;
+  }
+  .booking-steps li {
+    font-size: 8px;
+    gap: 5px;
+  }
+  .appointment-summary {
+    padding: 25px;
+  }
+  .appointment-summary h2 {
+    font-size: 29px;
+  }
+  .treatment-information,
+  .contact-layout {
+    gap: 50px;
+  }
+}
+@media (max-width: 700px) {
+  .clinic-topbar {
+    padding: 8px 20px;
+    font-size: 9px;
+    justify-content: center;
+  }
+  .clinic-topbar > span:last-child {
+    display: none;
+  }
+  .clinic-header {
+    padding: 18px 20px;
+    gap: 15px;
+  }
+  .clinic-brand > span {
+    font-size: 29px;
+  }
+  .clinic-brand svg {
+    width: 28px;
+  }
+  .brand-sub {
+    font-size: 6px;
+    margin-top: 5px;
+  }
+  .clinic-navigation {
+    display: none;
+  }
+  .clinic-navigation.open {
+    position: absolute;
+    top: 83px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px 25px;
+    border-bottom: 1px solid var(--border);
+    gap: 0;
+  }
+  .clinic-navigation.open a {
+    padding: 15px;
+    min-height: 48px;
+  }
+  .clinic-menu {
+    display: grid;
+    flex-shrink: 0;
+  }
+  .booking-link {
+    margin-left: auto;
+    gap: 10px;
+    padding: 10px 12px;
+    font-size: 10px;
+    min-height: 42px;
+  }
+  .clinic-hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 40px 22px 45px;
+  }
+  .clinic-hero h1 {
+    font-size: 50px;
+    margin: 22px 0;
+  }
+  .clinic-hero-copy > p:not(.clinic-eyebrow) {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+  .hero-reassurance {
+    font-size: 9px;
+    margin-top: 20px;
+  }
+  .curved-photo {
+    height: 360px;
+    border-radius: 150px 150px 15px 15px;
+  }
+  .clinic-hero-visual {
+    max-width: 470px;
+    width: 100%;
+    justify-self: center;
+  }
+  .visit-note {
+    left: 0;
+    right: 25px;
+    bottom: 8px;
+    padding: 15px;
+    gap: 12px;
+  }
+  .visit-note strong {
+    font-size: 14px;
+  }
+  .visit-note p {
+    font-size: 10px;
+  }
+  .note-icon {
+    padding: 10px;
+  }
+  .care-values {
+    gap: 15px;
+    padding: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .care-values > div {
+    font-size: 9px;
+    gap: 8px;
+  }
+  .care-values svg {
+    width: 17px;
+  }
+  .clinic-treatments,
+  .people-section {
+    padding: 55px 22px;
+  }
+  .clinic-section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  .clinic-section-heading h2 {
+    font-size: 36px;
+    margin-top: 15px;
+  }
+  .clinic-section-heading > p,
+  .clinic-section-heading > div:last-child > p {
+    font-size: 12px;
+  }
+  .treatment-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .treatment-card {
+    min-height: 0;
+    padding: 25px;
+  }
+  .treatment-card > svg {
+    margin-bottom: 20px;
+  }
+  .treatment-card h3 {
+    font-size: 23px;
+  }
+  .treatment-card > p:not(.clinic-eyebrow) {
+    font-size: 12px;
+    margin: 13px 0 20px;
+  }
+  .approach-section {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 45px 22px;
+  }
+  .approach-photo {
+    height: 330px;
+  }
+  .approach-copy h2 {
+    font-size: 35px;
+  }
+  .approach-copy > p:not(.clinic-eyebrow) {
+    font-size: 13px;
+  }
+  .dentist-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .dentist-card > div {
+    height: 360px;
+  }
+  .dentist-card h3 {
+    font-size: 24px;
+  }
+  .faq-section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 50px 22px;
+  }
+  .faq-section h2 {
+    font-size: 34px;
+  }
+  .faq-section summary {
+    font-size: 12px;
+  }
+  .visit-cta {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 50px 22px;
+  }
+  .visit-cta h2 {
+    font-size: 40px;
+  }
+  .visit-cta > div:last-child {
+    justify-self: start;
+  }
+  .clinic-footer {
+    padding: 40px 22px 25px;
+  }
+  .clinic-footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 25px;
+  }
+  .clinic-footer-main > div {
+    font-size: 10px;
+  }
+  .clinic-footer-main > div:last-child p {
+    font-size: 10px;
+  }
+  .clinic-footer-bottom {
+    font-size: 8px;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+  }
+  .clinic-page-hero {
+    padding: 45px 22px;
+  }
+  .clinic-page-hero h1 {
+    font-size: 43px;
+  }
+  .clinic-page-hero > p:not(.clinic-eyebrow) {
+    font-size: 13px;
+  }
+  .treatment-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .treatment-hero h1 {
+    font-size: 42px;
+  }
+  .treatment-hero > div > p {
+    font-size: 13px;
+  }
+  .treatment-hero-photo {
+    height: 280px;
+  }
+  .treatment-information {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 45px 22px;
+  }
+  .treatment-information h2 {
+    font-size: 34px;
+  }
+  .treatment-information > div > p:not(.clinic-eyebrow) {
+    font-size: 13px;
+  }
+  .expectation {
+    gap: 15px;
+    padding: 25px 0;
+  }
+  .expectation h3 {
+    font-size: 19px;
+  }
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 22px 55px;
+  }
+  .clinic-form h2 {
+    font-size: 28px;
+  }
+  .form-pair {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .patient-stories {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 22px 55px;
+  }
+  .care-principles {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 45px 22px;
+  }
+  .booking-page {
+    padding: 35px 20px 50px;
+  }
+  .booking-heading h1 {
+    font-size: 37px;
+  }
+  .booking-heading > p:not(.clinic-eyebrow) {
+    font-size: 12px;
+  }
+  .demo-banner {
+    padding: 14px;
+    font-size: 10px;
+    align-items: start;
+  }
+  .demo-banner svg {
+    margin-top: 2px;
+  }
+  .booking-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .booking-step-content {
+    padding: 25px 20px;
+  }
+  .booking-steps {
+    padding: 20px 14px;
+    gap: 8px;
+  }
+  .booking-steps li {
+    flex-direction: column;
+    font-size: 8px;
+    gap: 7px;
+  }
+  .booking-step-content h2 {
+    font-size: 29px;
+  }
+  .care-option {
+    padding: 16px 14px;
+  }
+  .care-option strong {
+    font-size: 12px;
+  }
+  .care-option > div > span {
+    font-size: 9px;
+  }
+  .appointment-summary {
+    padding: 25px;
+  }
+  .appointment-summary h2 {
+    font-size: 31px;
+  }
+  .appointment-summary h2 br {
+    display: none;
+  }
+  .appointment-summary > div {
+    padding: 15px 0;
+  }
+  .summary-mark {
+    margin-bottom: 15px;
+  }
+  .booking-reset {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+  .time-slots {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .time-slots button {
+    font-size: 11px;
+  }
+  .booking-confirmation {
+    padding: 45px 20px;
+  }
+  .booking-confirmation h1 {
+    font-size: 45px;
+  }
+  .booking-confirmation > p:not(.clinic-eyebrow) {
+    font-size: 12px;
+  }
+  .confirmation-details {
+    padding: 25px;
+  }
+  .confirmation-details > div {
+    font-size: 12px;
+  }
+  .confirmation-details > div small {
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

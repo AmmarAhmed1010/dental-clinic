@@ -1,0 +1,10 @@
+[
+  {
+    "site": "dental-clinic-website",
+    "checks": "Mobile menu opens, Escape closes and returns focus, keyboard focus outline, reduced-motion content visible, homepage images load, no failed asset requests"
+  },
+  {
+    "site": "dental-clinic-website",
+    "checks": "Contact demo validation and honest success feedback"
+  }
+]

@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {clinicDate,getSlots,overlaps,reserve,sanitizeReservations,validDate,nextDates} from '../src/lib/scheduling.ts';
+const now=new Date('2026-10-09T07:00:00Z');
+const dentist={id:'d1',treatments:['checkup','hygiene'],days:[1,2,3,4,5,6],start:540,end:1020};
+const treatments=[{id:'checkup',duration:30},{id:'hygiene',duration:45}];
+test('clinic date observes Karachi midnight independent of host timezone',()=>{assert.equal(clinicDate(new Date('2026-10-09T20:00:00Z')),'2026-10-10');assert.equal(nextDates(1,now)[0],'2026-10-10');});
+test('past dates, closed days and ineligible treatments offer no appointments',()=>{assert.deepEqual(getSlots(dentist,treatments[0],'2026-10-09',[],now),[]);assert.deepEqual(getSlots(dentist,treatments[0],'2026-10-11',[],now),[]);assert.deepEqual(getSlots(dentist,{id:'aligners',duration:30},'2026-10-12',[],now),[]);});
+test('availability includes seeded bookings, breaks and full treatment duration',()=>{const slots=getSlots(dentist,treatments[1],'2026-10-12',[],now);assert.equal(slots.find(s=>s.start===540).available,true);assert.equal(slots.find(s=>s.start===570).available,false);assert.equal(slots.find(s=>s.start===750).available,false);assert.equal(slots.find(s=>s.start===840).available,true);});
+test('overlap detection permits adjacency and rejects partial overlaps',()=>{assert.equal(overlaps({start:540,duration:45},{start:570,duration:30}),true);assert.equal(overlaps({start:540,duration:30},{start:570,duration:30}),false);});
+test('confirmation rechecks reservations and prevents double booking',()=>{const request={dentist:'d1',treatment:'checkup',date:'2026-10-12',start:540};const first=reserve([],request,[dentist],treatments,now);assert.match(first.reservation.id,/^ST-/);assert.throws(()=>reserve(first.reservations,request,[dentist],treatments,now),/no longer available/);assert.equal(reserve(first.reservations,{...request,start:570},[dentist],treatments,now).reservations.length,2);});
+test('invalid saved dates, durations and dentists are rejected',()=>{assert.equal(validDate('2026-02-30'),false);assert.deepEqual(sanitizeReservations([{id:'x',dentist:'missing',treatment:'checkup',date:'2026-10-12',start:540,duration:30},{id:'y',dentist:'d1',treatment:'checkup',date:'2026-10-12',start:540,duration:15}], [dentist],treatments),[]);});
